@@ -54,4 +54,7 @@ $(document).ready(function () {
         })
     }
 
+    $('#ok').click(function(){
+        $('#popup').hide()
+    })
 })
