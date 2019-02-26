@@ -1,5 +1,18 @@
-        body { font-family: 'Arial'}
-        table tr td { width: 110px; height: 50px; background-color: #CCC; text-align: center; padding: 10px;}
-        #main { margin-left: auto; margin-right: auto; width: 80%}
-        .selected { background-color: #000; color: #FFF; }
-        #messages { padding: 0 0 1rem 0; font-size: 18pt; color: #b34700; font-weight: bold }
+body { font-family: 'Arial'}
+table { width: 100%; }
+table tr td { width: 110px; height: 50px; background-color: #CCC; text-align: center; padding: 10px;}
+#main { margin-left: auto; margin-right: auto; width: 80%}
+.selected { background-color: #000; color: #FFF; }
+#messages { padding: 0 0 1rem 0; font-size: 18pt; color: #b34700; font-weight: bold }
+#adjectives { display: none}
+#done {
+    display: none;
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 16pt;
+    font-weight: bold;
+    margin-top: 1rem;
+}
