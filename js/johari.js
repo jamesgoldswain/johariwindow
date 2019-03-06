@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     response.id = window.location.search.replace('?','')
 
-    checkJohariSubmission(response.id)
+    //checkJohariSubmission(response.id)
 
     $('#adjectives tr td').click(function (e) {
 

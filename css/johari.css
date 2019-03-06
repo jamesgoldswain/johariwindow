@@ -4,7 +4,9 @@ table tr td { width: 110px; height: 50px; background-color: #CCC; text-align: ce
 #main { margin-left: auto; margin-right: auto; width: 80%}
 .selected { background-color: #000; color: #FFF; }
 #messages { padding: 0 0 1rem 0; font-size: 18pt; color: #b34700; font-weight: bold }
-#adjectives { display: none}
+#adjectives { 
+    flex-direction: row | row-reverse | column | column-reverse;
+  }
 #done {
     display: none;
     width: 100%;
