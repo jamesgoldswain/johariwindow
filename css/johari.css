@@ -1,31 +1,71 @@
-body { font-family: 'Helvetica'; margin: 0px; padding: 0px; width: 100%; font-size: 100%}
-table { width: 100%; }
-table tr td { width: 110px; height: 50px; background-color: #CCC; text-align: center; padding: 10px;}
-#main { margin-left: auto; margin-right: auto; width: 80%}
-.selected { background-color: #000; color: #FFF; }
-#messages { padding: 0 0 1rem 0; font-size: 18pt; color: #b34700; font-weight: bold }
-#adjectives { 
-    flex-direction: row | row-reverse | column | column-reverse;
-  }
-#done {
-    display: none;
-    width: 100%;
-    height: 50px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    font-size: 16pt;
-    font-weight: bold;
-    margin-top: 1rem;
+body { font-family: 'Helvetica'; margin: 0px; padding: 0px; width: 100%; font-size: 100%; background-color: #f45f42; }
+
+@media screen and (max-width: 800px) {
+    body { font-size: 2rem }
+    table#adjectives { 
+        width: 100% !important; 
+    }
+    table tr td { 
+        font-size: 1rem
+    }
+    #messages { 
+        font-size: 1rem
+    }
+    article { 
+        font-size: 1.5rem
+    }
+    #footer {
+        display: none;
+        position: fixed;
+        height: 50px;
+    }
 }
+
+@media screen and (min-width: 800px) {
+    table#adjectives { 
+        width: 50% !important; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+table#adjectives {
+    display: none 
+}
+
+table tr td { 
+    color: #fff;
+    background-color: #cc5139;
+    cursor: grab;
+    margin: 5px;
+    padding: 5px;
+}
+
+.selected { background-color: #000; color: #FFF; }
+
+#footer {
+    display: none;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: 000;
+    color: white;
+    text-align: center;
+    -webkit-animation:pop-in 0.1s;
+    -moz-animation:pop-in 0.1s;
+    -ms-animation:pop-in 0.1s; 
+}
+
+#footer button {
+    margin-top: .75rem;
+}
+
 #ok {
-    padding: 1rem;
     background-color: #f45f42;
     color: #fff;
-    border: solid 2px #fff;
-    font-size: 5rem;
+    border: solid 1px #fff;
     font-weight: bold;
-    margin-top: 1rem;
 }
 @-webkit-keyframes pop-in {
     0% { opacity: 0; -webkit-transform: scale(0.5); }
@@ -41,12 +81,31 @@ table tr td { width: 110px; height: 50px; background-color: #CCC; text-align: ce
 }
 
 #popup { 
-    height: 100%; 
+    position: absolute;
+    height: 100%;
+    width: 100%;
     background-color: #f45f42; 
-    font-size: 5rem;
     -webkit-animation:pop-in 0.5s;
     -moz-animation:pop-in 0.5s;
     -ms-animation:pop-in 0.5s; 
 }
 
-#popup article { margin-left: auto; margin-right: auto; padding-top: 10%; width: 75%; text-align: center; color: #fff}
+#messages { 
+    display: none;
+    position: fixed;
+    margin-top: 50%;
+    width: 80%;
+    color: #000;
+    background-color: #fff; 
+    -webkit-animation:pop-in 0.1s;
+    -moz-animation:pop-in 0.1s;
+    -ms-animation:pop-in 0.1s; 
+}
+
+#popup article { 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 75%; 
+    text-align: center; 
+    color: #fff
+}

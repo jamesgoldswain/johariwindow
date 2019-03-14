@@ -12,9 +12,8 @@ $(document).ready(function () {
 
     $('#adjectives tr td').click(function (e) {
 
-        (response.qualities.length >= 5 && response.qualities.length <= 6) ? $('#done').show() : $('#done').hide()
+        (response.qualities.length >= 5 && response.qualities.length <= 6) ? $('#footer').show() : $('#footer').hide()
       
-        $('#messages').empty()
         var selectedAdjective = $(e.target)
 
         if (selectedAdjective.hasClass('selected')) {
@@ -26,7 +25,8 @@ $(document).ready(function () {
                 response.qualities.push(selectedAdjective.text())
                 $(e.target).addClass('selected')
             } else {
-                $('#messages').text('Sorry you can only add 6')
+                $('#messagesText').text('Sorry you can only add 6')
+                $('#messages').show()
             }
         }
     })
@@ -35,18 +35,19 @@ $(document).ready(function () {
         $.post( "https://johariapi.jamesgoldswain.net/v1/add" , JSON.stringify(response) )
          .done(function( data ) {
             $('#adjectives').hide()
-            $('#done').hide()
-            $('#messages').text('Thanks a stack!')
-         })
-      })
-
+            $('#footer').hide()
+            $('#messagesText').text('Thanks a stack!')
+            $('#messages').show()
+       })
+    })
 
     function checkJohariSubmission(id){
         $.get( "https://johariapi.jamesgoldswain.net/v1/check" , { id })
         .done(function( data ) {
             if (!!data.id) {
-                $('#messages').text(`It looks like you've already submitted a Johari for me, thanks!`)
-                $('#done').hide()
+                $('#messagesText').text(`It looks like you've already submitted a Johari for me, thanks!`)
+                $('#messages').show()
+                $('#footer').hide()
                 $('#adjectives').hide()
             }else{
                 $('#adjectives').show()
@@ -56,5 +57,10 @@ $(document).ready(function () {
 
     $('#ok').click(function(){
         $('#popup').hide()
+        $('#adjectives').show()
+    })
+
+    $('#messagesOk').click(function(e){
+        $(e.target).parent().hide()
     })
 })
