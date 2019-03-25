@@ -1,4 +1,4 @@
-body { font-family: 'Helvetica'; margin: 0px; padding: 0px; width: 100%; font-size: 100%; background-color: #f45f42; }
+body { font-family: 'Helvetica'; margin: 0px; padding: 0px; width: 100%; font-size: 100%; color: #000}
 
 @media screen and (max-width: 800px) {
     body { font-size: 2rem }
@@ -6,7 +6,7 @@ body { font-family: 'Helvetica'; margin: 0px; padding: 0px; width: 100%; font-si
         width: 100% !important; 
     }
     table tr td { 
-        font-size: 1rem
+        font-size: auto
     }
     #messages { 
         font-size: 1rem
@@ -30,18 +30,18 @@ body { font-family: 'Helvetica'; margin: 0px; padding: 0px; width: 100%; font-si
 }
 
 table#adjectives {
-    display: none 
+    display: none;
 }
 
 table tr td { 
-    color: #fff;
-    background-color: #cc5139;
     cursor: grab;
     margin: 5px;
     padding: 5px;
+    text-align: center;
+    border: solid 1px #ccc;
 }
 
-.selected { background-color: #000; color: #FFF; }
+.selected { background-color: #ccc;  }
 
 #footer {
     display: none;
@@ -50,7 +50,6 @@ table tr td {
     bottom: 0;
     width: 100%;
     background-color: 000;
-    color: white;
     text-align: center;
     -webkit-animation:pop-in 0.1s;
     -moz-animation:pop-in 0.1s;
@@ -62,9 +61,6 @@ table tr td {
 }
 
 #ok {
-    background-color: #f45f42;
-    color: #fff;
-    border: solid 1px #fff;
     font-weight: bold;
 }
 @-webkit-keyframes pop-in {
@@ -81,10 +77,10 @@ table tr td {
 }
 
 #popup { 
+    background-color: #fff;
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: #f45f42; 
     -webkit-animation:pop-in 0.5s;
     -moz-animation:pop-in 0.5s;
     -ms-animation:pop-in 0.5s; 
@@ -92,20 +88,17 @@ table tr td {
 
 #messages { 
     display: none;
-    position: fixed;
-    margin-top: 50%;
-    width: 80%;
-    color: #000;
-    background-color: #fff; 
-    -webkit-animation:pop-in 0.1s;
-    -moz-animation:pop-in 0.1s;
-    -ms-animation:pop-in 0.1s; 
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-animation:pop-in 0.5s;
+    -moz-animation:pop-in 0.5s;
+    -ms-animation:pop-in 0.5s; 
 }
 
-#popup article { 
+article { 
     margin-left: auto; 
     margin-right: auto; 
     width: 75%; 
     text-align: center; 
-    color: #fff
 }

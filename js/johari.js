@@ -6,9 +6,11 @@ var response = {
 
 $(document).ready(function () {
 
+    var apiUrl = 'https://johariapi.jamesgoldswain.net/v1'
+
     response.id = window.location.search.replace('?','')
 
-    //checkJohariSubmission(response.id)
+    checkJohariSubmission(response.id)
 
     $('#adjectives tr td').click(function (e) {
 
@@ -32,17 +34,18 @@ $(document).ready(function () {
     })
 
     $('#done').click(function(){
-        $.post( "https://johariapi.jamesgoldswain.net/v1/add" , JSON.stringify(response) )
+        $.post(apiUrl + '/add' , JSON.stringify(response) )
          .done(function( data ) {
             $('#adjectives').hide()
             $('#footer').hide()
             $('#messagesText').text('Thanks a stack!')
             $('#messages').show()
+            $('#messagesOk').hide()
        })
     })
 
     function checkJohariSubmission(id){
-        $.get( "https://johariapi.jamesgoldswain.net/v1/check" , { id })
+        $.get(apiUrl + '/check', { id })
         .done(function( data ) {
             if (!!data.id) {
                 $('#messagesText').text(`It looks like you've already submitted a Johari for me, thanks!`)
